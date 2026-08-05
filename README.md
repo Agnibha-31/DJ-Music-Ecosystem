@@ -740,9 +740,6 @@ This repository is publicly available for demonstration, evaluation, learning, a
 
 ## Developer
 
-**Agnibha Basak**  
-GitHub: [@Agnibha-31](https://github.com/Agnibha-31)  
-Email: [remix.play31@gmail.com](mailto:remix.play31@gmail.com?subject=DJ%20Music%20Ecosystem%20Enquiry)  
-Gmail users: [Open a new message](https://mail.google.com/mail/?view=cm&fs=1&to=remix.play31%40gmail.com&su=DJ%20Music%20Ecosystem%20Enquiry)
+### [Agnibha Basak](https://github.com/Agnibha-31)
 
-For venue dashboards, real-time systems, custom business platforms, deployment support, or a tailored version of this ecosystem, use either email link above to open a pre-addressed message.
+For venue dashboards, real-time systems, custom business platforms, deployment support, or a tailored version of this ecosystem, mail at: [remix.play31@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=remix.play31@gmail.com&su=Smart%20Meter%20IoT%20Dashboard%20Enquiry)
