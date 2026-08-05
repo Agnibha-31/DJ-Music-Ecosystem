@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DJ Command Center</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="auth-card">
+        <div class="header">
+          <h1 class="title">DJ COMMAND CENTER</h1>
+          <p class="subtitle">Authorization required to control the live queue</p>
+        </div>
+        <form class="form">
+          <div class="field">
+            <label class="label" for="username">Username</label>
+            <input class="input" id="username" type="text" placeholder="Enter your DJ username" />
+          </div>
+          <div class="field">
+            <label class="label" for="authKey">Authentication Key</label>
+            <input class="input" id="authKey" type="password" placeholder="Enter your auth key" />
+          </div>
+          <button class="button" type="button">Request Access</button>
+          <p class="helper">
+            Only authorized DJs can enter the command center.<br />
+            Contact your administrator to obtain credentials.
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
