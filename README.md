@@ -14,6 +14,9 @@ The **DJ Music Ecosystem** connects guests, DJs, and venue administrators throug
 [![Socket.IO](https://img.shields.io/badge/Socket.IO-4.x-010101?logo=socket.io&logoColor=white)](https://socket.io/)
 [![Storage](https://img.shields.io/badge/Storage-JSON_files-F7DF1E?logo=json&logoColor=black)](#data-and-persistence)
 
+[![Code License: Apache 2.0](https://img.shields.io/badge/Code%20License-Apache%202.0-blue.svg)](./LICENSE)
+[![Data License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-brightgreen.svg)](./DATA_LICENSE.md)
+
 **[See the interface](#visual-tour)** · **[Understand the architecture](#system-architecture)** · **[Run the project](#getting-started)** · **[Explore the API](#api-at-a-glance)**
 
 </div>
