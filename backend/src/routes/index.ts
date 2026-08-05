@@ -1,0 +1,32 @@
+import { Router } from "express";
+import authRoutes from "./auth.js";
+import queueRoutes from "./queue.js";
+import songsRoutes from "./songs.js";
+import pollsRoutes from "./polls.js";
+import analyticsRoutes from "./analytics.js";
+import activityLogsRoutes from "./activityLogs.js";
+import usersRoutes from "./users.js";
+import venuesRoutes from "./venues.js";
+import djsRoutes from "./djs.js";
+import systemRoutes from "./system.js";
+import historyRoutes from "./history.js";
+import assetsRoutes from "./assets.js";
+import backupRoutes from "./backup.js";
+import liveSessionsRoutes from "./liveSessions.js";
+
+export const routes = Router();
+
+routes.use(authRoutes);
+routes.use(queueRoutes);
+routes.use(songsRoutes);
+routes.use(pollsRoutes);
+routes.use(analyticsRoutes);
+routes.use(activityLogsRoutes);
+routes.use(usersRoutes);
+routes.use(venuesRoutes);
+routes.use(djsRoutes);
+routes.use(systemRoutes);
+routes.use(historyRoutes);
+routes.use(assetsRoutes);
+routes.use(backupRoutes);
+routes.use(liveSessionsRoutes);
