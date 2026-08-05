@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "records": [
+    {
+      "id": "asset_001",
+      "record_version": 1,
+      "schema_version": "1.0.0",
+      "created_at": "2026-02-08T00:00:00Z",
+      "updated_at": "2026-02-08T00:00:00Z",
+      "deleted_at": null,
+      "created_by": { "actor_type": "system", "actor_id": null },
+      "updated_by": { "actor_type": "system", "actor_id": null },
+      "url": "https://cdn.example.com/avatar_2001.png",
+      "type": "avatar",
+      "ownerId": "user_2001"
+    }
+  ]
+}

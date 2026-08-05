@@ -1,0 +1,68 @@
+# Canonical Socket.IO Contract
+
+Event payloads
+- queue.request.created
+  - Payload: { queueItem: QueueItem, meta: { version, createdAt } }
+  - Emitter: backend (queue request)
+- queue.vote.updated
+  - Payload: { queueItemId: string, votes: number, meta: { version, updatedAt, actorId? } }
+  - Emitter: backend (queue vote)
+- dj.queue.inserted
+  - Payload: { queueItem: QueueItem, meta: { version, createdAt, actorId } }
+  - Emitter: backend (DJ insert)
+- dj.queue.accepted
+  - Payload: { queueItemId: string, status: QueueStatus, meta: { version, updatedAt, actorId } }
+  - Emitter: backend (DJ accept)
+- dj.queue.rejected
+  - Payload: { queueItemId: string, status: QueueStatus, meta: { version, updatedAt, actorId } }
+  - Emitter: backend (DJ reject)
+- dj.queue.reverted
+  - Payload: { queueItemId: string, status: QueueStatus, meta: { version, updatedAt, actorId } }
+  - Emitter: backend (DJ revert)
+- queue.item.updated
+  - Payload: { queueItemId: string, status: QueueStatus, meta: { version, updatedAt } }
+  - Emitter: backend (admin status updates)
+- admin.queue.priority.updated
+  - Payload: { queueItemId: string, priority: number, status: QueueStatus, meta: { version, updatedAt, actorId } }
+  - Emitter: backend (admin priority and force-play)
+- admin.queue.cleared
+  - Payload: { reason: string, meta: { updatedAt, actorId } }
+  - Emitter: backend (admin clear queue)
+- admin.system_mode.updated
+  - Payload: { systemMode: SystemMode, meta: { version, updatedAt, actorId } }
+  - Emitter: backend (system mode update)
+- admin.settings.updated
+  - Payload: { systemConfig?: SystemConfig, settings?: Settings, meta: { version, updatedAt, actorId } }
+  - Emitter: backend (system config or wait time)
+- admin.song.catalog.updated
+  - Payload: { songIds: string[], changeType: string, meta: { updatedAt, actorId } }
+  - Emitter: backend (songs create/update/delete/bulk)
+- polls.updated
+  - Payload: { pollIds: string[], changeType: string }
+  - Emitter: backend (polls create/close/vote)
+- activity_logs.updated
+  - Payload: { log: ActivityLog, meta: { createdAt, actorId? } }
+  - Emitter: backend (activity log append)
+- dj.account.deleted
+  - Payload: { djId: string, djUsername: string, meta: { version, updatedAt, actorId } }
+  - Emitter: backend (admin deletes DJ account)
+- dj.access.requested
+  - Payload: { request: DJAccessRequest }
+  - Emitter: backend (DJ requests access)
+- dj.access.approved
+  - Payload: { requestId: string, djId: string }
+  - Emitter: backend (admin approves DJ access)
+- dj.access.denied
+  - Payload: { requestId: string, djId: string }
+  - Emitter: backend (admin denies DJ access)
+- venue.updated
+  - Payload: { venue: Venue }
+  - Emitter: backend (venue info updated)
+- system.mode.updated
+  - Payload: { systemMode: SystemMode }
+  - Emitter: backend (system mode changed)
+
+Frontend subscriptions
+- Admin: all events above
+- DJ: queue.request.created, queue.vote.updated, dj.queue.inserted, dj.queue.accepted, dj.queue.rejected, dj.queue.reverted, queue.item.updated, dj.account.deleted, venue.updated, system.mode.updated
+- Queue: queue.request.created, queue.vote.updated, dj.queue.inserted, dj.queue.accepted, dj.queue.rejected, dj.queue.reverted, queue.item.updated, venue.updated, system.mode.updated

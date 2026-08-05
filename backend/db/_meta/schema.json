@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-02-08T00:00:00Z",
+  "collections": [
+    "venues",
+    "system_mode",
+    "songs",
+    "queue_items",
+    "polls",
+    "poll_songs",
+    "poll_votes",
+    "users",
+    "djs",
+    "system_config",
+    "settings",
+    "assets",
+    "analytics_snapshots",
+    "activity_logs",
+    "backups",
+    "audit_log"
+  ],
+  "record_standard": {
+    "id": "string",
+    "record_version": "number",
+    "schema_version": "string",
+    "created_at": "string",
+    "updated_at": "string",
+    "deleted_at": "string|null",
+    "created_by": { "actor_type": "string", "actor_id": "string|null" },
+    "updated_by": { "actor_type": "string", "actor_id": "string|null" }
+  }
+}

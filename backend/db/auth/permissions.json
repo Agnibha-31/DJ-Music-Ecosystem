@@ -1,0 +1,34 @@
+{
+  "roles": [
+    {
+      "role": "admin",
+      "permissions": [
+        "admin.full"
+      ]
+    },
+    {
+      "role": "dj",
+      "permissions": [
+        "dj.basic",
+        "dj.queue",
+        "songs.catalog.read",
+        "queue.read",
+        "history.read",
+        "queue.insert",
+        "queue.accept",
+        "queue.reject",
+        "queue.revert",
+        "queue.vote"
+      ]
+    },
+    {
+      "role": "public",
+      "permissions": [
+        "songs.catalog.read",
+        "queue.read",
+        "queue.request",
+        "queue.vote"
+      ]
+    }
+  ]
+}

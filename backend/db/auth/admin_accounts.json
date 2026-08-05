@@ -1,0 +1,15 @@
+{
+  "records": [
+    {
+      "id": "admin_1770903980843",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "passwordHash": "$2a$12$OWZAO4GeC3ZJ4slBL5bOz.LDvQsUGs9J/2IVIQv6rJZJe.7w82PE.",
+      "status": "active",
+      "createdAt": "2026-02-17T00:00:00.000Z",
+      "updatedAt": "2026-02-17T00:00:00.000Z",
+      "createdBy": "system",
+      "updatedBy": "system"
+    }
+  ]
+}
