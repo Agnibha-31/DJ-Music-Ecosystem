@@ -1,0 +1,5295 @@
+```json
+{
+  "features": [
+    {
+      "feature_id": "component.context.AdminProvider",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "venue.*",
+        "system_mode.*",
+        "songs.*",
+        "polls.*",
+        "queue.*",
+        "activity_logs.*",
+        "users.*"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.context.useAdmin",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "venue.*",
+        "system_mode.*",
+        "songs.*",
+        "polls.*",
+        "queue.*",
+        "activity_logs.*",
+        "users.*",
+        "analytics.*"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.context.venue",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "venue.name",
+        "venue.logo",
+        "venue.accentColor",
+        "venue.address",
+        "venue.city",
+        "venue.state",
+        "venue.zipCode",
+        "venue.phone",
+        "venue.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.context.systemMode",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "system_mode.isLive",
+        "system_mode.isMaintenance",
+        "system_mode.isOverrideEnabled"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.context.songs",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.album",
+        "songs.duration",
+        "songs.genre",
+        "songs.language",
+        "songs.explicit",
+        "songs.addedDate",
+        "songs.status",
+        "songs.playCount",
+        "songs.voteCount"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.context.polls",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "polls.id",
+        "polls.title",
+        "polls.songs",
+        "polls.status",
+        "polls.totalVotes",
+        "polls.createdAt",
+        "polls.closedAt",
+        "polls.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.context.queue",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "queue.id",
+        "queue.songId",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.votes",
+        "queue.requestedBy",
+        "queue.timestamp",
+        "queue.status",
+        "queue.priority"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.context.activityLogs",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "activity_logs.id",
+        "activity_logs.type",
+        "activity_logs.description",
+        "activity_logs.timestamp",
+        "activity_logs.user",
+        "activity_logs.metadata"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.context.activeUsers",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "users.userId",
+        "users.username",
+        "users.requestCount",
+        "users.voteCount",
+        "users.lastActive",
+        "users.isActive",
+        "users.flaggedForSpam"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.updateVenue",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateVenue",
+      "required_database_fields": [
+        "venue.name",
+        "venue.logo",
+        "venue.accentColor",
+        "venue.address",
+        "venue.city",
+        "venue.state",
+        "venue.zipCode",
+        "venue.phone",
+        "venue.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.context.toggleLiveMode",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.toggleLiveMode",
+      "required_database_fields": [
+        "system_mode.isLive"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.toggleMaintenance",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.toggleMaintenance",
+      "required_database_fields": [
+        "system_mode.isMaintenance"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.toggleOverride",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.toggleOverride",
+      "required_database_fields": [
+        "system_mode.isOverrideEnabled"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.addSong",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.addSong",
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.album",
+        "songs.duration",
+        "songs.genre",
+        "songs.language",
+        "songs.explicit",
+        "songs.status",
+        "songs.addedDate",
+        "songs.playCount",
+        "songs.voteCount"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.context.updateSong",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateSong",
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.album",
+        "songs.duration",
+        "songs.genre",
+        "songs.language",
+        "songs.explicit",
+        "songs.status",
+        "songs.playCount",
+        "songs.voteCount"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.context.deleteSong",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "AdminContext.deleteSong",
+      "required_database_fields": [
+        "songs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.context.bulkImportSongs",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.bulkImportSongs",
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.album",
+        "songs.duration",
+        "songs.genre",
+        "songs.language",
+        "songs.explicit",
+        "songs.status",
+        "songs.addedDate",
+        "songs.playCount",
+        "songs.voteCount"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.context.bulkUpdateSongStatus",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.bulkUpdateSongStatus",
+      "required_database_fields": [
+        "songs.id",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.context.createPoll",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.createPoll",
+      "required_database_fields": [
+        "polls.id",
+        "polls.title",
+        "polls.songs",
+        "polls.status",
+        "polls.totalVotes",
+        "polls.createdAt",
+        "polls.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.closePoll",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.closePoll",
+      "required_database_fields": [
+        "polls.id",
+        "polls.status",
+        "polls.closedAt"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.votePoll",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.votePoll",
+      "required_database_fields": [
+        "polls.id",
+        "polls.totalVotes",
+        "polls.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.addToQueue",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.addToQueue",
+      "required_database_fields": [
+        "queue.id",
+        "queue.songId",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.votes",
+        "queue.requestedBy",
+        "queue.timestamp",
+        "queue.status",
+        "queue.priority"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.updateQueueItemStatus",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateQueueItemStatus",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.updateQueuePriority",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateQueuePriority",
+      "required_database_fields": [
+        "queue.id",
+        "queue.priority"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.forcePlaySong",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.forcePlaySong",
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "queue.id",
+        "queue.songId",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.priority",
+        "queue.status",
+        "queue.timestamp",
+        "queue.requestedBy"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.blockSong",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.blockSong",
+      "required_database_fields": [
+        "songs.id",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.context.clearQueue",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "AdminContext.clearQueue",
+      "required_database_fields": [
+        "queue.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.addLog",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.addLog",
+      "required_database_fields": [
+        "activity_logs.id",
+        "activity_logs.type",
+        "activity_logs.description",
+        "activity_logs.timestamp",
+        "activity_logs.user",
+        "activity_logs.metadata"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.removeActivityLog",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "AdminContext.removeActivityLog",
+      "required_database_fields": [
+        "activity_logs.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.context.flagUserForSpam",
+      "UI_location": "src/context/AdminContext.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.flagUserForSpam",
+      "required_database_fields": [
+        "users.userId",
+        "users.flaggedForSpam"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.App",
+      "UI_location": "src/App.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.AdminLayout",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "venue.get; analytics.get; activity_logs.list; system_mode.get",
+      "required_database_fields": [
+        "venue.name",
+        "venue.address",
+        "venue.city",
+        "venue.state",
+        "analytics.activeRequests",
+        "analytics.totalSongs",
+        "analytics.activePolls",
+        "analytics.activeUsers",
+        "analytics.activeSongs",
+        "activity_logs.id",
+        "activity_logs.description",
+        "activity_logs.timestamp",
+        "activity_logs.type",
+        "system_mode.isLive",
+        "system_mode.isMaintenance",
+        "system_mode.isOverrideEnabled"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.admin_layout.sidebarCollapsed",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.admin_layout.sidebarOpen",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.admin_layout.adminSettings",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "admin.username",
+        "admin.email",
+        "admin.password"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.admin_layout.adminSaved",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.admin_layout.isNotificationOpen",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.admin_layout.isAdminPanelOpen",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.admin_layout.notifications_panel",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "activity_logs.list",
+      "required_database_fields": [
+        "activity_logs.id",
+        "activity_logs.description",
+        "activity_logs.timestamp",
+        "activity_logs.type"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "modal.admin_layout.admin_settings_panel",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "admin.get",
+      "required_database_fields": [
+        "admin.username",
+        "admin.email",
+        "admin.password"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.admin_layout.sidebar_toggle",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.admin_layout.sidebar_mobile_open",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.admin_layout.sidebar_mobile_close",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.admin_layout.notifications_toggle",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "activity_logs.list",
+      "required_database_fields": [
+        "activity_logs.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.admin_layout.admin_panel_toggle",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "admin.get",
+      "required_database_fields": [
+        "admin.username"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.admin_layout.delete_notification",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "AdminContext.removeActivityLog",
+      "required_database_fields": [
+        "activity_logs.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.admin_layout.save_admin_settings",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "admin_settings.update (placeholder)",
+      "required_database_fields": [
+        "admin.username",
+        "admin.email",
+        "admin.password"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.admin_layout.logout",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "auth.logout",
+      "required_database_fields": [
+        "admin.session"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.admin_layout.username",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "admin.username"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.admin_layout.email",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "admin.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.admin_layout.password",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "admin.password"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "api_placeholder.admin_layout.save_admin_settings",
+      "UI_location": "src/components/admin/AdminLayout.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "admin_settings.update (commented placeholder)",
+      "required_database_fields": [
+        "admin.username",
+        "admin.email",
+        "admin.password"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "page.Dashboard",
+      "UI_location": "src/pages/Dashboard.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "analytics.get; songs.list; activity_logs.list",
+      "required_database_fields": [
+        "analytics.totalSongs",
+        "analytics.activeSongs",
+        "analytics.totalPlays",
+        "analytics.totalVotes",
+        "analytics.activePolls",
+        "analytics.totalPolls",
+        "analytics.activeRequests",
+        "analytics.activeUsers",
+        "songs.genre",
+        "songs.playCount",
+        "songs.title",
+        "songs.artist",
+        "activity_logs.description",
+        "activity_logs.timestamp",
+        "activity_logs.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "page.ControlPanel",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "queue.list; songs.list; system_mode.get",
+      "required_database_fields": [
+        "queue.id",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.votes",
+        "queue.requestedBy",
+        "queue.status",
+        "queue.priority",
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.status",
+        "system_mode.isLive",
+        "system_mode.isMaintenance",
+        "system_mode.isOverrideEnabled"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.control_panel.selectedSongId",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.control_panel.force_play_select",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "toggle.control_panel.live_mode",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.toggleLiveMode",
+      "required_database_fields": [
+        "system_mode.isLive"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "toggle.control_panel.maintenance_mode",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.toggleMaintenance",
+      "required_database_fields": [
+        "system_mode.isMaintenance"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "toggle.control_panel.override_mode",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.toggleOverride",
+      "required_database_fields": [
+        "system_mode.isOverrideEnabled"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.control_panel.force_play_now",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.forcePlaySong",
+      "required_database_fields": [
+        "songs.id",
+        "queue.id",
+        "queue.songId",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.priority",
+        "queue.status",
+        "queue.timestamp"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.control_panel.clear_queue",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "AdminContext.clearQueue",
+      "required_database_fields": [
+        "queue.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "toggle.control_panel.priority_toggle",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateQueuePriority",
+      "required_database_fields": [
+        "queue.id",
+        "queue.priority"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.control_panel.accept_queue_item",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateQueueItemStatus",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.control_panel.reject_queue_item",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateQueueItemStatus",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.control_panel.play_queue_item",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateQueueItemStatus",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.control_panel.mark_played_queue_item",
+      "UI_location": "src/pages/ControlPanel.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateQueueItemStatus",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "page.SongManagement",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status",
+        "songs.playCount",
+        "songs.voteCount"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.searchTerm",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.filterGenre",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.filterStatus",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.selectedSongs",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.isAddModalOpen",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.isEditModalOpen",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.isImportModalOpen",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.isDatabaseModalOpen",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.editingSong",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.newSong",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.addSong",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.dragActive",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.parsedSongs",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.bulkImportSongs",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_management.importErrors",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.song_management.search",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.song_management.filter_genre",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.song_management.filter_status",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.song_management.select_all_checkbox",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.song_management.row_checkbox",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.export_csv",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status",
+        "songs.playCount",
+        "songs.voteCount"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.import_csv_open",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.database_open",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.add_song_open",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.addSong",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.bulk_enable",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.bulkUpdateSongStatus",
+      "required_database_fields": [
+        "songs.id",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.bulk_disable",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.bulkUpdateSongStatus",
+      "required_database_fields": [
+        "songs.id",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.bulk_block",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.bulkUpdateSongStatus",
+      "required_database_fields": [
+        "songs.id",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.bulk_clear_selection",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.edit_song",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateSong",
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_management.delete_song",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "AdminContext.deleteSong",
+      "required_database_fields": [
+        "songs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.song_management.add_song",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.addSong",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.song_management.edit_song",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.updateSong",
+      "required_database_fields": [
+        "songs.id",
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.song_management.import_csv",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.bulkImportSongs",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.song_management.database",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.song_management.parse_csv",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.song_management.import_songs",
+      "UI_location": "src/pages/SongManagement.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.bulkImportSongs",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "songs.album",
+        "songs.duration",
+        "songs.language",
+        "songs.explicit",
+        "songs.status"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "page.PollAnalytics",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "polls.list; songs.list",
+      "required_database_fields": [
+        "polls.id",
+        "polls.title",
+        "polls.status",
+        "polls.totalVotes",
+        "polls.createdAt",
+        "polls.closedAt",
+        "polls.songs",
+        "polls.votes",
+        "songs.id",
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.poll_analytics.isCreateModalOpen",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.poll_analytics.newPoll",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.createPoll",
+      "required_database_fields": [
+        "polls.title",
+        "polls.songs"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.poll_analytics.open_create_poll",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.createPoll",
+      "required_database_fields": [
+        "polls.title",
+        "polls.songs"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.poll_analytics.close_poll",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.closePoll",
+      "required_database_fields": [
+        "polls.id",
+        "polls.status",
+        "polls.closedAt"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "modal.poll_analytics.create_poll",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.createPoll",
+      "required_database_fields": [
+        "polls.title",
+        "polls.songs"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "input.poll_analytics.poll_title",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.createPoll",
+      "required_database_fields": [
+        "polls.title"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.poll_analytics.select_song",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.createPoll",
+      "required_database_fields": [
+        "polls.songs",
+        "songs.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.poll_analytics.cancel_create",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.poll_analytics.submit_create",
+      "UI_location": "src/pages/PollAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "AdminContext.createPoll",
+      "required_database_fields": [
+        "polls.title",
+        "polls.songs"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "page.PlaybackAnalytics",
+      "UI_location": "src/pages/PlaybackAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "analytics.playback.get; songs.list",
+      "required_database_fields": [
+        "songs.playCount",
+        "songs.title",
+        "songs.artist",
+        "songs.genre",
+        "analytics.totalPlays",
+        "analytics.totalSongs",
+        "analytics.activeSongs"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.playback_analytics.timeFilter",
+      "UI_location": "src/pages/PlaybackAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "analytics.playback.get",
+      "required_database_fields": [
+        "analytics.playback"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.playback_analytics.time_filter_select",
+      "UI_location": "src/pages/PlaybackAnalytics.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "analytics.playback.get",
+      "required_database_fields": [
+        "analytics.playback"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "page.HistoryLogs",
+      "UI_location": "src/pages/HistoryLogs.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "activity_logs.list",
+      "required_database_fields": [
+        "activity_logs.id",
+        "activity_logs.type",
+        "activity_logs.description",
+        "activity_logs.user",
+        "activity_logs.timestamp"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.history_logs.filterType",
+      "UI_location": "src/pages/HistoryLogs.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "activity_logs.list",
+      "required_database_fields": [
+        "activity_logs.type"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.history_logs.searchTerm",
+      "UI_location": "src/pages/HistoryLogs.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "activity_logs.list",
+      "required_database_fields": [
+        "activity_logs.description"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.history_logs.search",
+      "UI_location": "src/pages/HistoryLogs.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "activity_logs.list",
+      "required_database_fields": [
+        "activity_logs.description"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.history_logs.filter_select",
+      "UI_location": "src/pages/HistoryLogs.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "activity_logs.list",
+      "required_database_fields": [
+        "activity_logs.type"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.history_logs.export_logs",
+      "UI_location": "src/pages/HistoryLogs.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "activity_logs.type",
+        "activity_logs.description",
+        "activity_logs.user",
+        "activity_logs.timestamp"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "page.SystemConfig",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "venue.get; venues.list; djs.list; system_config.get",
+      "required_database_fields": [
+        "venue.name",
+        "venue.address",
+        "venue.city",
+        "venue.state",
+        "venue.zipCode",
+        "venue.phone",
+        "venue.email",
+        "djs.id",
+        "djs.name",
+        "djs.username",
+        "djs.phone",
+        "djs.email",
+        "djs.bio",
+        "djs.authKey",
+        "djs.authenticated",
+        "system_config.notificationsEnabled",
+        "system_config.emailNotifications",
+        "system_config.pushNotifications",
+        "system_config.autoAcceptRequests",
+        "system_config.maxRequestsPerUser",
+        "system_config.maxVotesPerUser",
+        "system_config.requestCooldown",
+        "system_config.backupEnabled",
+        "system_config.backupFrequency"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.venueChanged",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.venueAdded",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.djAdded",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.venueForm",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.name",
+        "venue.address",
+        "venue.city",
+        "venue.state",
+        "venue.zipCode",
+        "venue.phone",
+        "venue.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.venueList",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "venues.list",
+      "required_database_fields": [
+        "venues.name",
+        "venues.address",
+        "venues.city",
+        "venues.state",
+        "venues.zipCode",
+        "venues.phone",
+        "venues.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.djForm",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "djs.create",
+      "required_database_fields": [
+        "djs.name",
+        "djs.username",
+        "djs.phone",
+        "djs.email",
+        "djs.bio"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.djList",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "djs.list",
+      "required_database_fields": [
+        "djs.id",
+        "djs.name",
+        "djs.username",
+        "djs.phone",
+        "djs.email",
+        "djs.bio",
+        "djs.authKey",
+        "djs.authenticated"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.selectedDjId",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "djs.get",
+      "required_database_fields": [
+        "djs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.generatedKey",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "djs.update_auth_key",
+      "required_database_fields": [
+        "djs.authKey"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.system_config.config",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.notificationsEnabled",
+        "system_config.emailNotifications",
+        "system_config.pushNotifications",
+        "system_config.autoAcceptRequests",
+        "system_config.maxRequestsPerUser",
+        "system_config.maxVotesPerUser",
+        "system_config.requestCooldown",
+        "system_config.backupEnabled",
+        "system_config.backupFrequency"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_select",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "venues.list",
+      "required_database_fields": [
+        "venues.name",
+        "venues.city",
+        "venues.state"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_name",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.name"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_address",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.address"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_city",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.city"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_state",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.state"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_zip",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.zipCode"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_phone",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.phone"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.venue_email",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.add_venue",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "venues.create",
+      "required_database_fields": [
+        "venues.name",
+        "venues.address",
+        "venues.city",
+        "venues.state",
+        "venues.zipCode",
+        "venues.phone",
+        "venues.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.change_venue",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "venue.update",
+      "required_database_fields": [
+        "venue.name",
+        "venue.address",
+        "venue.city",
+        "venue.state",
+        "venue.zipCode",
+        "venue.phone",
+        "venue.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.delete_venue",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "venues.delete",
+      "required_database_fields": [
+        "venues.name"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.dj_name",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "djs.create",
+      "required_database_fields": [
+        "djs.name"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.dj_username",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "djs.create",
+      "required_database_fields": [
+        "djs.username"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.dj_phone",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "djs.create",
+      "required_database_fields": [
+        "djs.phone"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.dj_email",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "djs.create",
+      "required_database_fields": [
+        "djs.email"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.dj_bio",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "djs.create",
+      "required_database_fields": [
+        "djs.bio"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.add_dj",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "djs.create",
+      "required_database_fields": [
+        "djs.name",
+        "djs.username",
+        "djs.phone",
+        "djs.email",
+        "djs.bio"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.select_dj",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "djs.get",
+      "required_database_fields": [
+        "djs.id",
+        "djs.authKey",
+        "djs.authenticated"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.generate_auth_key",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "djs.update_auth_key",
+      "required_database_fields": [
+        "djs.id",
+        "djs.authKey"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.authenticate_dj",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "djs.authenticate",
+      "required_database_fields": [
+        "djs.id",
+        "djs.authenticated"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.delete_dj",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "delete",
+      "required_backend_endpoint": "djs.delete",
+      "required_database_fields": [
+        "djs.id"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.system_config.notifications_enabled",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.notificationsEnabled"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.system_config.email_notifications",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.emailNotifications"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.system_config.push_notifications",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.pushNotifications"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.system_config.auto_accept_requests",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.autoAcceptRequests"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.max_requests_per_user",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.maxRequestsPerUser"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.max_votes_per_user",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.maxVotesPerUser"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.request_cooldown",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.requestCooldown"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.system_config.backup_enabled",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.backupEnabled"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.system_config.backup_frequency",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.update",
+      "required_database_fields": [
+        "system_config.backupFrequency"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.system_config.download_backup_now",
+      "UI_location": "src/pages/SystemConfig.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "backup.download",
+      "required_database_fields": [
+        "backup.file"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "page.UserMonitoring",
+      "UI_location": "src/pages/UserMonitoring.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "users.activity.list",
+      "required_database_fields": [
+        "users.userId",
+        "users.username",
+        "users.requestCount",
+        "users.voteCount",
+        "users.lastActive",
+        "users.isActive",
+        "users.flaggedForSpam",
+        "analytics.activeUsers"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.user_monitoring.flag_user",
+      "UI_location": "src/pages/UserMonitoring.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "AdminContext.flagUserForSpam",
+      "required_database_fields": [
+        "users.userId",
+        "users.flaggedForSpam"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.user_monitoring.unflag_user",
+      "UI_location": "src/pages/UserMonitoring.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "users.unflag_spam (placeholder)",
+      "required_database_fields": [
+        "users.userId",
+        "users.flaggedForSpam"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.AnalyticsCards",
+      "UI_location": "src/components/AnalyticsCards.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "analytics.totalRequests",
+        "analytics.totalVotes",
+        "analytics.activeGenres"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.BackgroundAnimation",
+      "UI_location": "src/components/BackgroundAnimation.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ParticleField",
+      "UI_location": "src/components/ParticleField.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.MobileOptimizer",
+      "UI_location": "src/components/MobileOptimizer.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.FloatingNotes",
+      "UI_location": "src/components/FloatingNotes.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.PulsingRings",
+      "UI_location": "src/components/PulsingRings.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.MusicNoteExplosion",
+      "UI_location": "src/components/MusicNoteExplosion.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ItsHotCelebration",
+      "UI_location": "src/components/ItsHotCelebration.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "queue.songTitle"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.Header",
+      "UI_location": "src/components/Header.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.Footer",
+      "UI_location": "src/components/Footer.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.StatsBar",
+      "UI_location": "src/components/StatsBar.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "queue.length"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.GenreChart",
+      "UI_location": "src/components/GenreChart.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": "queue.list",
+      "required_database_fields": [
+        "queue.genre",
+        "queue.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.VotesChart",
+      "UI_location": "src/components/VotesChart.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.accept (via onAcceptSong)",
+      "required_database_fields": [
+        "queue.id",
+        "queue.votes",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.votes_chart.clickedId",
+      "UI_location": "src/components/VotesChart.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "queue.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.votes_chart.handleBarClick",
+      "UI_location": "src/components/VotesChart.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.accept (via onAcceptSong)",
+      "required_database_fields": [
+        "queue.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.DJQueue",
+      "UI_location": "src/components/DJQueue.tsx",
+      "user_role": "dj",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.accept; queue.reject",
+      "required_database_fields": [
+        "queue.id",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.votes",
+        "queue.timestamp"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.dj_queue.actionId",
+      "UI_location": "src/components/DJQueue.tsx",
+      "user_role": "dj",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "queue.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.dj_queue.actionType",
+      "UI_location": "src/components/DJQueue.tsx",
+      "user_role": "dj",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.dj_queue.accept",
+      "UI_location": "src/components/DJQueue.tsx",
+      "user_role": "dj",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.accept (via onAcceptSong)",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.dj_queue.reject",
+      "UI_location": "src/components/DJQueue.tsx",
+      "user_role": "dj",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.reject (via onRejectSong)",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.WaitTimeControl",
+      "UI_location": "src/components/WaitTimeControl.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.wait_time.update (via onApplyWaitTime)",
+      "required_database_fields": [
+        "system_config.waitTime"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.wait_time_control.tempTime",
+      "UI_location": "src/components/WaitTimeControl.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "system_config.waitTime"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.wait_time_control.hasChanges",
+      "UI_location": "src/components/WaitTimeControl.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.wait_time_control.decrease",
+      "UI_location": "src/components/WaitTimeControl.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.wait_time.update (via onApplyWaitTime)",
+      "required_database_fields": [
+        "system_config.waitTime"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.wait_time_control.increase",
+      "UI_location": "src/components/WaitTimeControl.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.wait_time.update (via onApplyWaitTime)",
+      "required_database_fields": [
+        "system_config.waitTime"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.wait_time_control.apply",
+      "UI_location": "src/components/WaitTimeControl.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": "system_config.wait_time.update (via onApplyWaitTime)",
+      "required_database_fields": [
+        "system_config.waitTime"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.SongRequestForm",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.add_request (via onAddSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.song_request.selectedGenre",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_request.selectedSong",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_request.isSubmitting",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_request.isSearchOpen",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.song_request.showFlyingPlane",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "form.song_request_form",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.add_request (via onAddSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "input.song_request.genre_select",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.song_request.song_select",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.song_request.submit",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.add_request (via onAddSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.song_request.open_search_modal",
+      "UI_location": "src/components/SongRequestForm.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.SearchModal",
+      "UI_location": "src/components/SearchModal.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.search_modal",
+      "UI_location": "src/components/SearchModal.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist",
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.search_modal.searchTerm",
+      "UI_location": "src/components/SearchModal.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.search_modal.search",
+      "UI_location": "src/components/SearchModal.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "songs.list",
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.search_modal.close",
+      "UI_location": "src/components/SearchModal.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.search_modal.select_song",
+      "UI_location": "src/components/SearchModal.tsx",
+      "user_role": "user",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.add_request (via onAddSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.SongQueue",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.vote (via onVote)",
+      "required_database_fields": [
+        "queue.id",
+        "queue.votes",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.timestamp"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.song_queue.votingId",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "queue.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.song_queue.isRemainingOpen",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.song_queue.sortedQueue",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "queue.list",
+      "required_database_fields": [
+        "queue.id",
+        "queue.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.song_queue.hotSongName",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "queue.songTitle"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.song_queue.showHotCelebration",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.song_queue.vote_on_bar_click",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.vote (via onVote)",
+      "required_database_fields": [
+        "queue.id",
+        "queue.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.song_queue.open_remaining_modal",
+      "UI_location": "src/components/SongQueue.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "queue.list",
+      "required_database_fields": [
+        "queue.id"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.RemainingQueueModal",
+      "UI_location": "src/components/RemainingQueueModal.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.vote (via onVote)",
+      "required_database_fields": [
+        "queue.id",
+        "queue.votes",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "modal.remaining_queue",
+      "UI_location": "src/components/RemainingQueueModal.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": "queue.list",
+      "required_database_fields": [
+        "queue.id",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre",
+        "queue.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.remaining_queue.close",
+      "UI_location": "src/components/RemainingQueueModal.tsx",
+      "user_role": "user",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "action.remaining_queue.vote_song",
+      "UI_location": "src/components/RemainingQueueModal.tsx",
+      "user_role": "user",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.vote (via onVote)",
+      "required_database_fields": [
+        "queue.id",
+        "queue.votes"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.RequestHistory",
+      "UI_location": "src/components/RequestHistory.tsx",
+      "user_role": "dj",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.revert_accept; queue.revert_reject",
+      "required_database_fields": [
+        "queue.id",
+        "queue.songTitle",
+        "queue.artist",
+        "queue.timestamp",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.request_history.revert",
+      "UI_location": "src/components/RequestHistory.tsx",
+      "user_role": "dj",
+      "action_type": "update",
+      "required_backend_endpoint": "queue.revert_accept; queue.revert_reject",
+      "required_database_fields": [
+        "queue.id",
+        "queue.status"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.InsertSongModal",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.insert_song.selectedGenre",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.insert_song.selectedSong",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.title"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.insert_song.manualTitle",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.songTitle"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.insert_song.manualArtist",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.artist"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "state.insert_song.genreDropdownOpen",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.insert_song.songDropdownOpen",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.insert_song.showSuccess",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.insert_song",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "input.insert_song.manual_title",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.songTitle"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "input.insert_song.manual_artist",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.artist"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.insert_song.close",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.insert_song.genre_dropdown_toggle",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.insert_song.genre_select",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.genre"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.insert_song.song_dropdown_toggle",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.insert_song.song_select",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [
+        "songs.title",
+        "songs.artist"
+      ],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.insert_song.insert_from_dropdown",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "button.insert_song.insert_manual",
+      "UI_location": "src/components/InsertSongModal.tsx",
+      "user_role": "admin",
+      "action_type": "write",
+      "required_backend_endpoint": "queue.insert (via onInsertSong)",
+      "required_database_fields": [
+        "queue.songTitle",
+        "queue.artist",
+        "queue.genre"
+      ],
+      "real_time_required": true
+    },
+    {
+      "feature_id": "component.InsertSongButton",
+      "UI_location": "src/components/InsertSongButton.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.insert_song_button",
+      "UI_location": "src/components/InsertSongButton.tsx",
+      "user_role": "admin",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ImageWithFallback",
+      "UI_location": "src/components/figma/ImageWithFallback.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.image_with_fallback.didError",
+      "UI_location": "src/components/figma/ImageWithFallback.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "action.image_with_fallback.onError",
+      "UI_location": "src/components/figma/ImageWithFallback.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Accordion",
+      "UI_location": "src/components/ui/accordion.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AccordionItem",
+      "UI_location": "src/components/ui/accordion.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.AccordionTrigger",
+      "UI_location": "src/components/ui/accordion.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AccordionContent",
+      "UI_location": "src/components/ui/accordion.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.AlertDialog",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.AlertDialogTrigger",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.AlertDialogContent",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AlertDialogHeader",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AlertDialogFooter",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AlertDialogTitle",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AlertDialogDescription",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.AlertDialogAction",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.AlertDialogCancel",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.AlertDialogPortal",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.AlertDialogOverlay",
+      "UI_location": "src/components/ui/alert-dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Alert",
+      "UI_location": "src/components/ui/alert.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AlertTitle",
+      "UI_location": "src/components/ui/alert.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AlertDescription",
+      "UI_location": "src/components/ui/alert.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AspectRatio",
+      "UI_location": "src/components/ui/aspect-ratio.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Avatar",
+      "UI_location": "src/components/ui/avatar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AvatarImage",
+      "UI_location": "src/components/ui/avatar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.AvatarFallback",
+      "UI_location": "src/components/ui/avatar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Badge",
+      "UI_location": "src/components/ui/badge.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Breadcrumb",
+      "UI_location": "src/components/ui/breadcrumb.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.BreadcrumbList",
+      "UI_location": "src/components/ui/breadcrumb.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.BreadcrumbItem",
+      "UI_location": "src/components/ui/breadcrumb.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.BreadcrumbLink",
+      "UI_location": "src/components/ui/breadcrumb.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.BreadcrumbPage",
+      "UI_location": "src/components/ui/breadcrumb.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.BreadcrumbSeparator",
+      "UI_location": "src/components/ui/breadcrumb.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.BreadcrumbEllipsis",
+      "UI_location": "src/components/ui/breadcrumb.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.Button",
+      "UI_location": "src/components/ui/button.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.Calendar",
+      "UI_location": "src/components/ui/calendar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Card",
+      "UI_location": "src/components/ui/card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CardHeader",
+      "UI_location": "src/components/ui/card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CardTitle",
+      "UI_location": "src/components/ui/card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CardDescription",
+      "UI_location": "src/components/ui/card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CardContent",
+      "UI_location": "src/components/ui/card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CardFooter",
+      "UI_location": "src/components/ui/card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CardAction",
+      "UI_location": "src/components/ui/card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Carousel",
+      "UI_location": "src/components/ui/carousel.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CarouselContent",
+      "UI_location": "src/components/ui/carousel.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CarouselItem",
+      "UI_location": "src/components/ui/carousel.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.CarouselPrevious",
+      "UI_location": "src/components/ui/carousel.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.CarouselNext",
+      "UI_location": "src/components/ui/carousel.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.ui.carousel.canScrollPrev",
+      "UI_location": "src/components/ui/carousel.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.ui.carousel.canScrollNext",
+      "UI_location": "src/components/ui/carousel.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ChartContainer",
+      "UI_location": "src/components/ui/chart.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ChartLegend",
+      "UI_location": "src/components/ui/chart.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ChartLegendContent",
+      "UI_location": "src/components/ui/chart.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ChartStyle",
+      "UI_location": "src/components/ui/chart.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ChartTooltip",
+      "UI_location": "src/components/ui/chart.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ChartTooltipContent",
+      "UI_location": "src/components/ui/chart.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.Checkbox",
+      "UI_location": "src/components/ui/checkbox.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Collapsible",
+      "UI_location": "src/components/ui/collapsible.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.CollapsibleTrigger",
+      "UI_location": "src/components/ui/collapsible.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CollapsibleContent",
+      "UI_location": "src/components/ui/collapsible.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Command",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.CommandDialog",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CommandEmpty",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CommandGroup",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.CommandInput",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CommandItem",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CommandList",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CommandSeparator",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.CommandShortcut",
+      "UI_location": "src/components/ui/command.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenu",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.ContextMenuTrigger",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuContent",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuItem",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.ContextMenuCheckboxItem",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuGroup",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuLabel",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuPortal",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuRadioGroup",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.ContextMenuRadioItem",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuSeparator",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuShortcut",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuSub",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.ContextMenuSubTrigger",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ContextMenuSubContent",
+      "UI_location": "src/components/ui/context-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.Dialog",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.DialogTrigger",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.DialogContent",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DialogHeader",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DialogFooter",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DialogTitle",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DialogDescription",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.DialogClose",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.DialogPortal",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.DialogOverlay",
+      "UI_location": "src/components/ui/dialog.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.Drawer",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.DrawerTrigger",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.DrawerContent",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DrawerHeader",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DrawerFooter",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DrawerTitle",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DrawerDescription",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.DrawerClose",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.DrawerPortal",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.DrawerOverlay",
+      "UI_location": "src/components/ui/drawer.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenu",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.DropdownMenuTrigger",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuContent",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuItem",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.DropdownMenuCheckboxItem",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuGroup",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuLabel",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuPortal",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuRadioGroup",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.DropdownMenuRadioItem",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuSeparator",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuShortcut",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuSub",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.DropdownMenuSubTrigger",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.DropdownMenuSubContent",
+      "UI_location": "src/components/ui/dropdown-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "form.ui.Form",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.FormField",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.FormItem",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.FormLabel",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.FormControl",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.FormDescription",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.FormMessage",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.useFormField",
+      "UI_location": "src/components/ui/form.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.HoverCard",
+      "UI_location": "src/components/ui/hover-card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.HoverCardTrigger",
+      "UI_location": "src/components/ui/hover-card.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.HoverCardContent",
+      "UI_location": "src/components/ui/hover-card.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.Input",
+      "UI_location": "src/components/ui/input.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.InputOTP",
+      "UI_location": "src/components/ui/input-otp.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.InputOTPGroup",
+      "UI_location": "src/components/ui/input-otp.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.InputOTPSlot",
+      "UI_location": "src/components/ui/input-otp.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.InputOTPSeparator",
+      "UI_location": "src/components/ui/input-otp.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Label",
+      "UI_location": "src/components/ui/label.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Menubar",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarMenu",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.MenubarTrigger",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarContent",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarItem",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.MenubarCheckboxItem",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarRadioGroup",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.MenubarRadioItem",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarSeparator",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarLabel",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarSub",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.MenubarSubTrigger",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarSubContent",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarShortcut",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarGroup",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.MenubarPortal",
+      "UI_location": "src/components/ui/menubar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.NavigationMenu",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.NavigationMenuList",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.NavigationMenuItem",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.NavigationMenuTrigger",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.NavigationMenuContent",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.NavigationMenuLink",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.NavigationMenuIndicator",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.NavigationMenuViewport",
+      "UI_location": "src/components/ui/navigation-menu.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Pagination",
+      "UI_location": "src/components/ui/pagination.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.PaginationContent",
+      "UI_location": "src/components/ui/pagination.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.PaginationItem",
+      "UI_location": "src/components/ui/pagination.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.PaginationLink",
+      "UI_location": "src/components/ui/pagination.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.PaginationPrevious",
+      "UI_location": "src/components/ui/pagination.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.PaginationNext",
+      "UI_location": "src/components/ui/pagination.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.PaginationEllipsis",
+      "UI_location": "src/components/ui/pagination.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.Popover",
+      "UI_location": "src/components/ui/popover.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.PopoverTrigger",
+      "UI_location": "src/components/ui/popover.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.PopoverContent",
+      "UI_location": "src/components/ui/popover.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.PopoverAnchor",
+      "UI_location": "src/components/ui/popover.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Progress",
+      "UI_location": "src/components/ui/progress.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.RadioGroup",
+      "UI_location": "src/components/ui/radio-group.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.RadioGroupItem",
+      "UI_location": "src/components/ui/radio-group.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ResizablePanelGroup",
+      "UI_location": "src/components/ui/resizable.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ResizablePanel",
+      "UI_location": "src/components/ui/resizable.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ResizableHandle",
+      "UI_location": "src/components/ui/resizable.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ScrollArea",
+      "UI_location": "src/components/ui/scroll-area.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.ScrollBar",
+      "UI_location": "src/components/ui/scroll-area.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.Select",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SelectTrigger",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SelectValue",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SelectContent",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SelectItem",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SelectGroup",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SelectLabel",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SelectScrollUpButton",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SelectScrollDownButton",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SelectSeparator",
+      "UI_location": "src/components/ui/select.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Separator",
+      "UI_location": "src/components/ui/separator.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.Sheet",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SheetTrigger",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "modal.ui.SheetContent",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SheetHeader",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SheetFooter",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SheetTitle",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SheetDescription",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SheetClose",
+      "UI_location": "src/components/ui/sheet.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Sidebar",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarProvider",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SidebarTrigger",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SidebarRail",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.SidebarInput",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SidebarMenuButton",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SidebarMenuAction",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SidebarGroupAction",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarContent",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarHeader",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarFooter",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarGroup",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarGroupLabel",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarGroupContent",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarMenu",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarMenuItem",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarMenuBadge",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarMenuSkeleton",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarMenuSub",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarMenuSubItem",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.SidebarMenuSubButton",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarSeparator",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.SidebarInset",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.ui.sidebar.openMobile",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.ui.sidebar.open",
+      "UI_location": "src/components/ui/sidebar.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Skeleton",
+      "UI_location": "src/components/ui/skeleton.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.Slider",
+      "UI_location": "src/components/ui/slider.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Toaster",
+      "UI_location": "src/components/ui/sonner.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.Switch",
+      "UI_location": "src/components/ui/switch.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Table",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TableHeader",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TableBody",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TableRow",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TableCell",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TableCaption",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TableFooter",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TableHead",
+      "UI_location": "src/components/ui/table.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Tabs",
+      "UI_location": "src/components/ui/tabs.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TabsList",
+      "UI_location": "src/components/ui/tabs.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.TabsTrigger",
+      "UI_location": "src/components/ui/tabs.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TabsContent",
+      "UI_location": "src/components/ui/tabs.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "input.ui.Textarea",
+      "UI_location": "src/components/ui/textarea.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.Toggle",
+      "UI_location": "src/components/ui/toggle.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.ToggleGroup",
+      "UI_location": "src/components/ui/toggle-group.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "toggle.ui.ToggleGroupItem",
+      "UI_location": "src/components/ui/toggle-group.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.Tooltip",
+      "UI_location": "src/components/ui/tooltip.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "button.ui.TooltipTrigger",
+      "UI_location": "src/components/ui/tooltip.tsx",
+      "user_role": "system",
+      "action_type": "update",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TooltipContent",
+      "UI_location": "src/components/ui/tooltip.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.TooltipProvider",
+      "UI_location": "src/components/ui/tooltip.tsx",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "component.ui.useIsMobile",
+      "UI_location": "src/components/ui/use-mobile.ts",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    },
+    {
+      "feature_id": "state.ui.useIsMobile.isMobile",
+      "UI_location": "src/components/ui/use-mobile.ts",
+      "user_role": "system",
+      "action_type": "read",
+      "required_backend_endpoint": null,
+      "required_database_fields": [],
+      "real_time_required": false
+    }
+  ]
+}
+```

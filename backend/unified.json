@@ -1,0 +1,462 @@
+
+{
+	"spec_version": "1.0.0",
+	"generated_at": "2026-02-08",
+	"sources": [
+		"admin.json",
+		"dj.json",
+		"queue.json"
+	],
+	"dedupe_rules": {
+		"feature_id": "case-sensitive",
+		"merge_strategy": "prefer_role_specific; normalize endpoints; unify field names"
+	},
+	"conflicts_resolved": [
+		{
+			"topic": "queue item fields",
+			"resolution": "standardized on queue.songId plus denormalized songTitle/artist/genre"
+		},
+		{
+			"topic": "role naming",
+			"resolution": "guest/user collapsed into public"
+		},
+		{
+			"topic": "wait time setting",
+			"resolution": "standardized on settings.waitTimeMinutes"
+		},
+		{
+			"topic": "admin context pseudo-endpoints",
+			"resolution": "mapped to REST-style admin endpoints"
+		}
+	],
+	"shared_state": [
+		"queue",
+		"songs",
+		"polls",
+		"activity_logs",
+		"system_mode",
+		"system_config",
+		"settings.waitTimeMinutes",
+		"analytics",
+		"venue"
+	],
+	"actions_by_role": {
+		"admin": {
+			"queue": [
+				"GET /queue",
+				"POST /queue/force-play",
+				"PATCH /queue/{id}/status",
+				"PATCH /queue/{id}/priority",
+				"DELETE /queue"
+			],
+			"songs": [
+				"GET /songs",
+				"POST /songs",
+				"PATCH /songs/{id}",
+				"DELETE /songs/{id}",
+				"PATCH /songs/bulk-status"
+			],
+			"polls": [
+				"GET /polls",
+				"POST /polls",
+				"PATCH /polls/{id}/close",
+				"PATCH /polls/{id}/vote"
+			],
+			"analytics": [
+				"GET /analytics",
+				"GET /analytics/playback"
+			],
+			"activity_logs": [
+				"GET /activity-logs",
+				"POST /activity-logs",
+				"DELETE /activity-logs/{id}"
+			],
+			"users": [
+				"GET /users/activity",
+				"PATCH /users/{id}/flag-spam",
+				"PATCH /users/{id}/unflag-spam (placeholder)"
+			],
+			"venue": [
+				"GET /venue",
+				"PATCH /venue",
+				"GET /venues",
+				"POST /venues",
+				"DELETE /venues/{id}"
+			],
+			"djs": [
+				"GET /djs",
+				"GET /djs/{id}",
+				"POST /djs",
+				"PATCH /djs/{id}/auth-key",
+				"PATCH /djs/{id}/authenticate",
+				"DELETE /djs/{id}"
+			],
+			"system": [
+				"PATCH /system-mode",
+				"GET /system-config",
+				"PATCH /system-config",
+				"PATCH /settings/wait-time",
+				"GET /backup/download",
+				"POST /auth/logout"
+			]
+		},
+		"dj": {
+			"queue": [
+				"GET /queue",
+				"POST /queue/request",
+				"POST /queue/insert",
+				"PATCH /queue/vote",
+				"PATCH /queue/accept",
+				"PATCH /queue/reject",
+				"PATCH /queue/revert",
+				"GET /history/accepted",
+				"GET /history/rejected"
+			],
+			"songs": [
+				"GET /songs/catalog",
+				"GET /songs/genres",
+				"GET /songs/by-genre",
+				"GET /songs/search"
+			],
+			"settings": [
+				"PATCH /settings/wait-time"
+			]
+		},
+		"public": {
+			"queue": [
+				"GET /queue",
+				"POST /queue/request",
+				"PATCH /queue/vote",
+				"DELETE /queue/{id}"
+			],
+			"songs": [
+				"GET /songs/catalog",
+				"GET /songs/genres",
+				"GET /songs/by-genre",
+				"GET /songs/search"
+			],
+			"assets": [
+				"GET /assets/image",
+				"GET /users/avatar"
+			]
+		}
+	},
+	"data_schema": {
+		"Venue": {
+			"id": "string",
+			"name": "string",
+			"logo": "string",
+			"accentColor": "string",
+			"address": "string",
+			"city": "string",
+			"state": "string",
+			"zipCode": "string",
+			"phone": "string",
+			"email": "string"
+		},
+		"SystemMode": {
+			"isLive": "boolean",
+			"isMaintenance": "boolean",
+			"isOverrideEnabled": "boolean"
+		},
+		"Song": {
+			"id": "string",
+			"title": "string",
+			"artist": "string",
+			"album": "string",
+			"duration": "number",
+			"genre": "string",
+			"language": "string",
+			"explicit": "boolean",
+			"addedDate": "string",
+			"status": "enabled|disabled|blocked",
+			"playCount": "number",
+			"voteCount": "number"
+		},
+		"QueueItem": {
+			"id": "string",
+			"songId": "string",
+			"songTitle": "string",
+			"artist": "string",
+			"genre": "string",
+			"votes": "number",
+			"requestedBy": "string",
+			"timestamp": "string",
+			"status": "pending|accepted|rejected|playing|played",
+			"priority": "number"
+		},
+		"Poll": {
+			"id": "string",
+			"title": "string",
+			"songs": ["string"],
+			"status": "open|closed",
+			"totalVotes": "number",
+			"createdAt": "string",
+			"closedAt": "string|null",
+			"votes": {
+				"songId": "number"
+			}
+		},
+		"ActivityLog": {
+			"id": "string",
+			"type": "string",
+			"description": "string",
+			"timestamp": "string",
+			"user": "string",
+			"metadata": "object"
+		},
+		"User": {
+			"userId": "string",
+			"username": "string",
+			"requestCount": "number",
+			"voteCount": "number",
+			"lastActive": "string",
+			"isActive": "boolean",
+			"flaggedForSpam": "boolean"
+		},
+		"Analytics": {
+			"totalSongs": "number",
+			"activeSongs": "number",
+			"totalPlays": "number",
+			"totalVotes": "number",
+			"totalRequests": "number",
+			"activeRequests": "number",
+			"activePolls": "number",
+			"totalPolls": "number",
+			"activeUsers": "number",
+			"activeGenres": "number",
+			"votesTotal": "number",
+			"genresActive": "number",
+			"playback": "object"
+		},
+		"DJ": {
+			"id": "string",
+			"name": "string",
+			"username": "string",
+			"phone": "string",
+			"email": "string",
+			"bio": "string",
+			"authKey": "string",
+			"authenticated": "boolean"
+		},
+		"SystemConfig": {
+			"notificationsEnabled": "boolean",
+			"emailNotifications": "boolean",
+			"pushNotifications": "boolean",
+			"autoAcceptRequests": "boolean",
+			"maxRequestsPerUser": "number",
+			"maxVotesPerUser": "number",
+			"requestCooldown": "number",
+			"backupEnabled": "boolean",
+			"backupFrequency": "string",
+			"waitTimeMinutes": "number"
+		},
+		"Settings": {
+			"waitTimeMinutes": "number"
+		},
+		"Asset": {
+			"url": "string"
+		},
+		"Backup": {
+			"file": "string"
+		}
+	},
+	"event_flow_map": [
+		{
+			"name": "public_or_dj_request_song",
+			"steps": [
+				"POST /queue/request",
+				"QueueItem created (status=pending)",
+				"emit queue.updated",
+				"emit analytics.updated",
+				"emit activity_logs.updated"
+			]
+		},
+		{
+			"name": "public_or_dj_vote",
+			"steps": [
+				"PATCH /queue/vote",
+				"QueueItem.votes incremented",
+				"emit queue.updated",
+				"emit analytics.updated"
+			]
+		},
+		{
+			"name": "dj_accept_reject",
+			"steps": [
+				"PATCH /queue/accept | PATCH /queue/reject",
+				"QueueItem.status updated",
+				"emit queue.updated",
+				"emit history.updated",
+				"emit analytics.updated"
+			]
+		},
+		{
+			"name": "dj_revert",
+			"steps": [
+				"PATCH /queue/revert",
+				"QueueItem.status set to pending",
+				"emit queue.updated",
+				"emit history.updated"
+			]
+		},
+		{
+			"name": "dj_or_admin_insert",
+			"steps": [
+				"POST /queue/insert",
+				"QueueItem created",
+				"emit queue.updated",
+				"emit analytics.updated"
+			]
+		},
+		{
+			"name": "admin_force_play_or_queue_edit",
+			"steps": [
+				"POST /queue/force-play | PATCH /queue/{id}/status | PATCH /queue/{id}/priority",
+				"QueueItem updated",
+				"emit queue.updated",
+				"emit activity_logs.updated"
+			]
+		},
+		{
+			"name": "admin_song_lifecycle",
+			"steps": [
+				"POST /songs | PATCH /songs/{id} | DELETE /songs/{id} | PATCH /songs/bulk-status",
+				"Song catalog updated",
+				"emit songs.updated",
+				"emit analytics.updated"
+			]
+		},
+		{
+			"name": "admin_poll_lifecycle",
+			"steps": [
+				"POST /polls | PATCH /polls/{id}/close | PATCH /polls/{id}/vote",
+				"Poll updated",
+				"emit polls.updated",
+				"emit analytics.updated"
+			]
+		},
+		{
+			"name": "admin_system_config",
+			"steps": [
+				"PATCH /system-mode | PATCH /system-config | PATCH /settings/wait-time",
+				"SystemMode/SystemConfig/Settings updated",
+				"emit system_mode.updated",
+				"emit system_config.updated",
+				"emit settings.updated"
+			]
+		}
+	],
+	"api_contracts": [
+		{ "method": "GET", "path": "/queue", "roles": ["public", "dj", "admin"] },
+		{ "method": "POST", "path": "/queue/request", "roles": ["public", "dj"] },
+		{ "method": "POST", "path": "/queue/insert", "roles": ["dj", "admin"] },
+		{ "method": "PATCH", "path": "/queue/vote", "roles": ["public", "dj"] },
+		{ "method": "PATCH", "path": "/queue/accept", "roles": ["dj", "admin"] },
+		{ "method": "PATCH", "path": "/queue/reject", "roles": ["dj", "admin"] },
+		{ "method": "PATCH", "path": "/queue/revert", "roles": ["dj"] },
+		{ "method": "DELETE", "path": "/queue/{id}", "roles": ["public"] },
+		{ "method": "PATCH", "path": "/queue/{id}/status", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/queue/{id}/priority", "roles": ["admin"] },
+		{ "method": "POST", "path": "/queue/force-play", "roles": ["admin"] },
+		{ "method": "DELETE", "path": "/queue", "roles": ["admin"] },
+
+		{ "method": "GET", "path": "/songs", "roles": ["admin"] },
+		{ "method": "GET", "path": "/songs/catalog", "roles": ["public", "dj"] },
+		{ "method": "GET", "path": "/songs/genres", "roles": ["public", "dj"] },
+		{ "method": "GET", "path": "/songs/by-genre", "roles": ["public", "dj"] },
+		{ "method": "GET", "path": "/songs/search", "roles": ["public", "dj"] },
+		{ "method": "POST", "path": "/songs", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/songs/{id}", "roles": ["admin"] },
+		{ "method": "DELETE", "path": "/songs/{id}", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/songs/bulk-status", "roles": ["admin"] },
+
+		{ "method": "GET", "path": "/polls", "roles": ["admin"] },
+		{ "method": "POST", "path": "/polls", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/polls/{id}/close", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/polls/{id}/vote", "roles": ["admin"] },
+
+		{ "method": "GET", "path": "/analytics", "roles": ["admin"] },
+		{ "method": "GET", "path": "/analytics/playback", "roles": ["admin"] },
+
+		{ "method": "GET", "path": "/activity-logs", "roles": ["admin"] },
+		{ "method": "POST", "path": "/activity-logs", "roles": ["admin"] },
+		{ "method": "DELETE", "path": "/activity-logs/{id}", "roles": ["admin"] },
+
+		{ "method": "GET", "path": "/users/activity", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/users/{id}/flag-spam", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/users/{id}/unflag-spam", "roles": ["admin"], "note": "placeholder" },
+		{ "method": "GET", "path": "/users/avatar", "roles": ["public", "dj", "admin"] },
+
+		{ "method": "GET", "path": "/venue", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/venue", "roles": ["admin"] },
+		{ "method": "GET", "path": "/venues", "roles": ["admin"] },
+		{ "method": "POST", "path": "/venues", "roles": ["admin"] },
+		{ "method": "DELETE", "path": "/venues/{id}", "roles": ["admin"] },
+
+		{ "method": "GET", "path": "/djs", "roles": ["admin"] },
+		{ "method": "GET", "path": "/djs/{id}", "roles": ["admin"] },
+		{ "method": "POST", "path": "/djs", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/djs/{id}/auth-key", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/djs/{id}/authenticate", "roles": ["admin"] },
+		{ "method": "DELETE", "path": "/djs/{id}", "roles": ["admin"] },
+
+		{ "method": "PATCH", "path": "/system-mode", "roles": ["admin"] },
+		{ "method": "GET", "path": "/system-config", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/system-config", "roles": ["admin"] },
+		{ "method": "PATCH", "path": "/settings/wait-time", "roles": ["dj", "admin"] },
+
+		{ "method": "GET", "path": "/history/accepted", "roles": ["dj"] },
+		{ "method": "GET", "path": "/history/rejected", "roles": ["dj"] },
+
+		{ "method": "GET", "path": "/assets/image", "roles": ["public", "dj", "admin"] },
+		{ "method": "GET", "path": "/backup/download", "roles": ["admin"] },
+		{ "method": "POST", "path": "/auth/logout", "roles": ["admin"] }
+	],
+	"websocket_events": [
+		{
+			"event": "queue.updated",
+			"payload": "QueueItem[]"
+		},
+		{
+			"event": "queue.item.updated",
+			"payload": "QueueItem"
+		},
+		{
+			"event": "songs.updated",
+			"payload": "Song[]"
+		},
+		{
+			"event": "polls.updated",
+			"payload": "Poll[]"
+		},
+		{
+			"event": "system_mode.updated",
+			"payload": "SystemMode"
+		},
+		{
+			"event": "system_config.updated",
+			"payload": "SystemConfig"
+		},
+		{
+			"event": "settings.updated",
+			"payload": "Settings"
+		},
+		{
+			"event": "analytics.updated",
+			"payload": "Analytics"
+		},
+		{
+			"event": "activity_logs.updated",
+			"payload": "ActivityLog[]"
+		},
+		{
+			"event": "users.updated",
+			"payload": "User[]"
+		},
+		{
+			"event": "history.updated",
+			"payload": "{ accepted: QueueItem[], rejected: QueueItem[] }"
+		}
+	]
+}
