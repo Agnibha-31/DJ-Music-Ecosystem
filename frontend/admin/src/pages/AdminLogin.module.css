@@ -1,0 +1,94 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 420px;
+  border-radius: 22px;
+  padding: 26px 28px 24px;
+  background: linear-gradient(180deg, #6e4795 0%, #5d3a87 100%);
+  box-shadow: 0 16px 30px rgba(34, 16, 70, 0.35);
+  color: #ffffff;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #d7c7e6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0e7fb;
+}
+
+.input {
+  height: 44px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #c2b0dd;
+}
+
+.button {
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #0b84d9 0%, #0b60ff 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 8px 16px rgba(12, 86, 180, 0.35);
+  cursor: pointer;
+}
+
+.link {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8fe7ff;
+  text-decoration: none;
+}
+
+.errorText {
+  margin-top: -6px;
+  font-size: 11px;
+  color: #ffd4d4;
+}
