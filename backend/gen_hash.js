@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 
-const password = 'Admin@12345';
+const password = '********';
 const saltRounds = 12;
 
 bcrypt.hash(password, saltRounds).then(hash => {
