@@ -15,7 +15,7 @@ The **DJ Music Ecosystem** connects guests, DJs, and venue administrators throug
 [![Storage](https://img.shields.io/badge/Storage-JSON_files-F7DF1E?logo=json&logoColor=black)](#data-and-persistence)
 
 [![Code License: Apache 2.0](https://img.shields.io/badge/Code%20License-Apache%202.0-blue.svg)](./LICENSE)
-[![Data License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-brightgreen.svg)](./DATA_LICENSE.md)
+[![Data License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-brightgreen.svg)](./LICENSE-DATA)
 
 **[See the interface](#visual-tour)** · **[Understand the architecture](#system-architecture)** · **[Run the project](#getting-started)** · **[Explore the API](#api-at-a-glance)**
 
@@ -736,7 +736,7 @@ Third-party packages and resources remain subject to their respective licenses a
 
 ## Project use and licensing
 
-This repository is publicly available for demonstration, evaluation, learning, and collaboration. A dedicated root-level license file can be added to state the project's formal reuse and distribution terms clearly. Until those terms are published, individuals and organizations interested in adapting, deploying, or building upon the ecosystem are encouraged to discuss their intended use with the developer.
+This repository is publicly available for demonstration, evaluation, learning, and collaboration. This repository uses an asset-level licensing structure. Original project software is licensed under the Apache License 2.0 through [`LICENSE`](LICENSE). Original project-owned data, documentation, screenshots, and media identified in [`DATA_SCOPE.md`](DATA_SCOPE.md) are licensed under CC BY 4.0 through [`LICENSE-DATA`](LICENSE-DATA). Third-party packages, UI components, images, and other resources retain their respective upstream licenses and terms.
 
 ## Developer
 
