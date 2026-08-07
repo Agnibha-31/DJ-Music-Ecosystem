@@ -736,7 +736,7 @@ Third-party packages and resources remain subject to their respective licenses a
 
 ## Project use and licensing
 
-This repository is publicly available for demonstration, evaluation, learning, and collaboration. This repository uses an asset-level licensing structure. Original project software is licensed under the Apache License 2.0 through [`LICENSE`](LICENSE). Original project-owned data, documentation, screenshots, and media identified in [`DATA_SCOPE.md`](DATA_SCOPE.md) are licensed under CC BY 4.0 through [`LICENSE-DATA`](LICENSE-DATA). Third-party packages, UI components, images, and other resources retain their respective upstream licenses and terms.
+This repository is publicly available for demonstration, evaluation, learning, and collaboration. It uses an asset-level licensing structure: original project software is licensed under the Apache License 2.0 through [`LICENSE`](LICENSE), while original project-owned data, documentation, screenshots, and media identified in [`DATA_SCOPE.md`](DATA_SCOPE.md) are licensed under CC BY 4.0 through [`LICENSE-DATA`](LICENSE-DATA). Third-party packages, UI components, images, and other resources retain their respective upstream licenses and terms.
 
 ## Developer
 
